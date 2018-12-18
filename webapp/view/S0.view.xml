@@ -44,7 +44,7 @@
 					</Toolbar>
 					<IconTabBar items="{veiculos>/}" expandable="false" expand="true">
 						<items>
-							<IconTabFilter text="{veiculos>modelo}" icon="{model: 'veiculos', path: 'tipo', formatter: '.formatIcon' }" >
+							<IconTabFilter text="{veiculos>modelo}" icon="{model: 'veiculos', path: 'tipo', formatter: '.formatIcon' }" iconColor="{model: 'veiculos', path: 'tipo', formatter: '.formatIconColor' }">
 								<content>
 									<ObjectHeader intro="{veiculos>marca}" title="{veiculos>modelo}" number="{veiculos>ano}"/>
 									<form:SimpleForm labelSpanM="3" emptySpanM="2" emptySpanL="2" layout="ResponsiveGridLayout">

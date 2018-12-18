@@ -124,6 +124,18 @@ sap.ui.define([
 
 		onDelete: function (oEvent) {
 
+			var aVeiculos = this._oVeiculosModel.getProperty("/");
+
+			var aPos = oEvent.mParameters.id;
+
+			aPos = (aPos.substring(aPos.indexOf("header-") + 7));
+
+			var index = parseInt(aPos);
+
+			aVeiculos.splice(index, index);
+
+			this._oVeiculosModel.setProperty("/", aVeiculos);
+
 		},
 
 		formatIcon: function (sTipo) {
@@ -141,6 +153,25 @@ sap.ui.define([
 
 			default:
 				return "sap-icon://sys-help";
+			}
+
+		},
+
+		formatIconColor: function (sTipo) {
+			if (!sTipo) {
+				return;
+			}
+
+			switch (sTipo) {
+			case 1:
+				return "Positive";
+			case 2:
+				return "Neutral";
+			case 3:
+				return "Critical";
+
+			default:
+				return "Default";
 			}
 
 		}
